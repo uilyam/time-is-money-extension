@@ -27,14 +27,27 @@ export default class Timer extends React.Component {
     const hours = Math.floor(now.diff(date, 'hours').hours);
     const minutes = Math.floor(now.diff(date, 'minutes').minutes);
     const seconds = Math.floor(now.diff(date, 'seconds').seconds);
-    return `${this.format(hours)}:${this.format(minutes)}:${this.format(seconds)}`;
+
+
+    return `${this.formatHours(hours)}:${this.formatHoursAndMintues(minutes)}:${this.formatHoursAndMintues(seconds)}`;
   }
 
-  format(value) {
+  formatHours(value) {
     if (value === 0) {
       return '00'
     } else if (String(value).length === 1) {
       return `0${value}`;
+    } else {
+      return value;
+    }
+  }
+  formatHoursAndMintues(value) {
+    if (value === 0) {
+      return '00'
+    } else if (String(value).length === 1) {
+      return `0${value}`;
+    } else if (value > 60) {
+      return (value - Math.floor(value / 60) * 60);
     } else {
       return value;
     }
