@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "TimeIsMoney",
+  "description": "Tracking time is money, don't waste time with apps, click start and make your money.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "TimeIsMoney"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-GgRxr...'; object-src 'self'",
+  "permissions": ["storage"]
+}
